@@ -1,0 +1,15 @@
+{% extends 'servers/base_site.html' %}
+
+{% block content %}
+<h1>Servers</h1>
+<ul>
+    {% for server in object_list %}
+    <li>{{ server.name }}  :  
+    <a href = "{% url "server_edit" server.id %}">update</a>
+    <a href = "{% url "server_delete" server.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url "server_new" %}">New</a>
+{% endblock content %}
