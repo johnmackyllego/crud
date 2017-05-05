@@ -1,15 +1,37 @@
 {% extends 'servers/base_site.html' %}
 
 {% block content %}
-<h1>Servers</h1>
-<ul>
-    {% for server in object_list %}
-    <li>{{ server.name }}  :  
-    <a href = "{% url "server_edit" server.id %}">update</a>
-    <a href = "{% url "server_delete" server.id %}">delete</a>
-    </li>
-    {% endfor %}
-</ul>
 
-<a href="{% url "server_new" %}">New</a>
-{% endblock content %}
+
+<div class = "container">
+    <div class = "col-md-4">
+    </div>
+    <div style = "margin-top: 40px"class = "col-md-4">
+        <div class="panel panel-primary">   
+            <div class="panel-heading">Servers</div>
+            <div class="panel-body">
+                <ul style="list-style-type:none">
+                    {% for server in object_list %}
+                    <li>{{ server.name }}  
+                    <div style = "float: right">
+                        <a href = "{% url "server_edit" server.id %}">update</a>
+                        &nbsp;
+                        <a href = "{% url "server_delete" server.id %}">delete</a>                        
+                    </div>
+                    </li>
+                    {% endfor %}
+                </ul>                
+            </div>
+            <div class="panel-footer">
+                <a href="{% url "server_new" %}">+ New</a>
+                {% endblock content %}
+            </div>
+        </div>        
+    </div>
+    <div class = "col-md-4">
+    </div>
+</div>
+
+
+
+
