@@ -9,16 +9,27 @@ from servers.models import Server
 # Create your views here.
 class ServerList(ListView):
     model = Server
-
+    
 class ServerCreate(CreateView):
     model = Server
     success_url = reverse_lazy('server_list')
     fields = ['name', 'ip', 'order']
-
+    
+    def get_context_data(self, **kwargs):
+        context = super(ServerCreate, self).get_context_data(**kwargs)
+        context['a'] = 2
+        return context
+    
 class ServerUpdate(UpdateView):
     model = Server
     success_url = reverse_lazy('server_list')
     fields = ['name', 'ip', 'order']
+
+    def get_context_data(self, **kwargs):
+        context = super(ServerUpdate, self).get_context_data(**kwargs)
+        context['a'] = 1
+        return context
+
 
 class ServerDelete(DeleteView):
     model = Server

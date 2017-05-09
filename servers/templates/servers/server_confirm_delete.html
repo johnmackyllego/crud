@@ -1,8 +1,24 @@
 {% extends 'servers/base_site.html' %}
 
 {% block content %}
-<form method="post">{% csrf_token %}
-    Are you sure you want to delete "{{ object }}" ?
-    <input type="submit" value="Submit" />
-</form>
+<div class="container">
+    <div class="col-md-4"></div>
+    <div id="center" class="col-md-4">
+        <form method="post">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-alert"></span>
+                Confirm</div>
+            <div class="panel-body">
+                {% csrf_token %}
+                Are you sure you want to delete "{{ object }}" ?
+            </div>
+            <div class="panel-footer">
+                <input class="btn btn-primary"type="submit" value="Submit" />
+            </div>
+        </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
 {% endblock content %}

@@ -4,28 +4,33 @@
 <div class="container">
     <div class = "col-md-4">
     </div>
-    <div class = "col-md-4" style="margin-top:40px">
+    <div id="center" class = "col-md-4">
         <form method="post">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                New/Update
-            </div>
-                <div class="panel-body">
-                    {% csrf_token %}
-                    
-                    <div>
-                        <h4>Name : <div style="float:right;">{{ form.name }}</div>
-                        </h4>
-                        <h4>IP Add. : <div style="float:right;">{{ form.ip }}</div>
-                        </h4>
-                        <h4>Order no. : <div style="float:right;">{{ form.order }}</div>
-                        </h4>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    {% if a == 2 %}
+                        <span class="glyphicon glyphicon-new-window"></span>
+                        New Account
+                    {% else %}
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        Update
+                    {% endif %}
+                </div>
+                    <div class="panel-body">
+                        {% csrf_token %}
+                        <div>
+                            <h4>Name : <div id="textbox">{{ form.name }}</div>
+                            </h4></br>
+                            <h4>IP Add. : <div id="textbox">{{ form.ip }}</div>
+                            </h4></br>
+                            <h4>Order no. : <div id="textbox">{{ form.order }}</div>
+                            </h4>
+                        </div>
                     </div>
-                </div>
-                <div class="panel-footer">
-                    <input class="btn btn-primary"type="submit" value="Submit" />
-                </div>
-        </div>
+                    <div class="panel-footer">
+                        <input class="btn btn-primary"type="submit" value="Submit" />
+                    </div>
+            </div>
         </form>
     </div>
     <div class = "col-md-4">

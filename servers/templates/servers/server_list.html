@@ -6,24 +6,37 @@
 <div class = "container">
     <div class = "col-md-4">
     </div>
-    <div style = "margin-top: 40px"class = "col-md-4">
+    <div id="center" class = "col-md-4">
         <div class="panel panel-primary">   
-            <div class="panel-heading">Servers</div>
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-list-alt"></span>
+                Servers
+            </div>
             <div class="panel-body">
                 <ul style="list-style-type:none; padding-left: 0;">
                     {% for server in object_list %}
-                    <li>{{ server.name }}  
-                    <div style = "float: right">
-                        <a href = "{% url "server_edit" server.id %}">update</a>
-                        &nbsp;
-                        <a href = "{% url "server_delete" server.id %}">delete</a>                        
-                    </div>
+                    <li>
+                        <h4>{{ server.name }}  
+                            <div style = "float: right">
+                                <a href = "{% url "server_edit" server.id %}">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                    edit
+                                </a>
+                                &nbsp;&nbsp;&nbsp;
+                                <a href = "{% url "server_delete" server.id %}">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                    delete
+                                </a>                        
+                            </div>
+                        </h4>
                     </li>
                     {% endfor %}
                 </ul>                
             </div>
             <div class="panel-footer">
-                <a href="{% url "server_new" %}">+ New</a>
+                <a href="{% url "server_new" %}">
+                    <span class="glyphicon glyphicon-plus"></span>
+                New</a>
                 {% endblock content %}
             </div>
         </div>        
