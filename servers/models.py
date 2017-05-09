@@ -11,6 +11,3 @@ class Server(models.Model):
 
     def __unicode__(self):
         return self.name
-
-    def get_absolute_url(self):
-        return reverse('server_edit', kwargs={'pk': self.pk})
