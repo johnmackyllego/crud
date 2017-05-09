@@ -21,14 +21,15 @@
                         <div>
                             <h4>Name <div id="textbox">{{ form.name }}</div>
                             </h4></br>
-                            <h4>IP Address <div id="textbox">{{ form.ip }}</div>
+                            <h4>Address <div id="textbox">{{ form.address }}</div>
                             </h4></br>
-                            <h4>Order # <div id="textbox">{{ form.order }}</div>
+                            <h4>Mobile # <div id="textbox">{{ form.mobile }}</div>
                             </h4>
                         </div>
                     </div>
                     <div class="panel-footer">
-                        <input class="btn btn-primary"type="submit" value="Submit" />
+                        <input class="btn btn-primary" onclick="history.go(-1)"type="button"value="Back"/>
+                        <input style="float:right"class="btn btn-success" type="submit" value="Submit" />
                     </div>
             </div>
         </form>

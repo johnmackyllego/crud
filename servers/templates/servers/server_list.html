@@ -10,18 +10,17 @@
         <div class="panel panel-primary">   
             <div class="panel-heading">
                 <span class="glyphicon glyphicon-list-alt"></span>
-                Servers
+                Accounts
             </div>
             <div class="panel-body">
                 <ul style="list-style-type:none; padding-left: 0;"
                     {% for server in object_list %}
                     <li>
-                        <h4>{{ server.name }}  
+                        <h4>
+                            <a href = "{% url "server_edit" server.id %}" data-toggle="tooltip" title="Click to Edit">
+                                {{ server.name }}
+                            </a>
                             <div style = "float: right">
-                                <a href = "{% url "server_edit" server.id %}">
-                                    <span class="glyphicon glyphicon-pencil"></span>
-                                    edit
-                                </a>
                                 &nbsp;&nbsp;&nbsp;
                                 <a href = "{% url "server_delete" server.id %}">
                                     <span class="glyphicon glyphicon-trash"></span>

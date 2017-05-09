@@ -11,10 +11,13 @@
                 Confirm</div>
             <div class="panel-body">
                 {% csrf_token %}
-                Are you sure you want to delete "{{ object }}" ?
+                <div style="margin: 0"class="alert alert-danger">
+                    <strong>Danger!</strong>Are you sure you want to delete "{{ object }}" ?
+                </div>
             </div>
             <div class="panel-footer">
-                <input class="btn btn-primary"type="submit" value="Submit" />
+                <input class="btn btn-primary" onclick="history.go(-1)"type="button"value="Back"/>
+                <input style="float: right;"class="btn btn-success"type="submit" value="Submit" />
             </div>
         </div>
         </form>
