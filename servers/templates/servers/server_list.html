@@ -1,48 +1,50 @@
 {% extends 'servers/base_site.html' %}
 
 {% block content %}
-
-
-<div class = "container">
-    <div class = "col-md-4">
-    </div>
-    <div id="center" class = "col-md-4">
-        <div class="panel panel-primary">   
-            <div class="panel-heading">
-                <span class="glyphicon glyphicon-list-alt"></span>
-                Accounts
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sample CRUD</title>
+    </head>
+    <body>
+        <div class = "container">
+            <div class = "col-md-4">
             </div>
-            <div class="panel-body">
-                <ul style="list-style-type:none; padding-left: 0;"
-                    {% for server in object_list %}
-                    <li>
-                        <h4>
-                            <a href = "{% url "server_edit" server.id %}" data-toggle="tooltip" title="Click to Edit">
-                                {{ server.name }}
-                            </a>
-                            <div style = "float: right">
-                                &nbsp;&nbsp;&nbsp;
-                                <a href = "{% url "server_delete" server.id %}">
-                                    <span class="glyphicon glyphicon-trash"></span>
-                                </a>                        
-                            </div>
-                        </h4>
-                    </li>
-                    {% endfor %}
-                </ul>                
+            <div id="center" class = "col-md-4">
+                <div class="panel panel-primary">   
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-list-alt"></span>
+                        Accounts
+                    </div>
+                    <div class="panel-body">
+                        <ul style="list-style-type:none; padding-left: 0;"
+                            {% for server in object_list %}
+                            <li>
+                                <h4>
+                                    <a href = "{% url "server_edit" server.id %}" data-toggle="tooltip" title="Click to Edit">
+                                        {{ server.name }}
+                                    </a>
+                                    <div style = "float: right">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <a href = "{% url "server_delete" server.id %}">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </a>                        
+                                    </div>
+                                </h4>
+                            </li>
+                            {% endfor %}
+                        </ul>                
+                    </div>
+                    <div class="panel-footer">
+                        <a href="{% url "server_new" %}">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        New</a>
+                        {% endblock content %}
+                    </div>
+                </div>        
             </div>
-            <div class="panel-footer">
-                <a href="{% url "server_new" %}">
-                    <span class="glyphicon glyphicon-plus"></span>
-                New</a>
-                {% endblock content %}
+            <div class = "col-md-4">
             </div>
-        </div>        
-    </div>
-    <div class = "col-md-4">
-    </div>
-</div>
-
-
-
-
+        </div>
+    </body>
+</html>

@@ -1,40 +1,48 @@
 {% extends 'servers/base_site.html' %}
 
 {% block content %}
-<div class="container">
-    <div class = "col-md-4">
-    </div>
-    <div id="center" class = "col-md-4">
-        <form method="post">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    {% if a == 2 %}
-                        <span class="glyphicon glyphicon-new-window"></span>
-                        New Account
-                    {% else %}
-                        <span class="glyphicon glyphicon-pencil"></span>
-                        Update
-                    {% endif %}
-                </div>
-                    <div class="panel-body">
-                        {% csrf_token %}
-                        <div>
-                            <h4>Name <div id="textbox">{{ form.name }}</div>
-                            </h4></br>
-                            <h4>Address <div id="textbox">{{ form.address }}</div>
-                            </h4></br>
-                            <h4>Mobile # <div id="textbox">{{ form.mobile }}</div>
-                            </h4>
-                        </div>
-                    </div>
-                    <div class="panel-footer">
-                        <input class="btn btn-primary" onclick="history.go(-1)"type="button"value="Back"/>
-                        <input style="float:right"class="btn btn-success" type="submit" value="Submit" />
-                    </div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sample CRUD</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class = "col-md-4">
             </div>
-        </form>
-    </div>
-    <div class = "col-md-4">
-    </div>
-</div>
+            <div id="center" class = "col-md-4">
+                <form method="post">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            {% if a == 2 %}
+                                <span class="glyphicon glyphicon-new-window"></span>
+                                New Account
+                            {% else %}
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                Update
+                            {% endif %}
+                        </div>
+                            <div class="panel-body">
+                                {% csrf_token %}
+                                <div>
+                                    <h4>Name <div id="textbox">{{ form.name }}</div>
+                                    </h4></br>
+                                    <h4>Address <div id="textbox">{{ form.address }}</div>
+                                    </h4></br>
+                                    <h4>Mobile # <div id="textbox">{{ form.mobile }}</div>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <input class="btn btn-primary" onclick="history.go(-1)"type="button"value="Back"/>
+                                <input style="float:right"class="btn btn-success" type="submit" value="Submit" />
+                            </div>
+                    </div>
+                </form>
+            </div>
+            <div class = "col-md-4">
+            </div>
+        </div>        
+    </body>
+</html>
 {% endblock content %}
